@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 /**
  * @Author ZhangXD
  * @Date 2021/9/2 10:25
@@ -22,9 +25,14 @@ public class FileController {
     @Autowired
     private MergeFileServer mergeFileServer;
 
-    @RequestMapping(path = "", method = RequestMethod.POST)
+    @RequestMapping(path = "/get", method = RequestMethod.POST)
     public String getFileInformation(@RequestParam(name = "file") MultipartFile multipartFile) {
         return mergeFileServer.showFileInformation(multipartFile);
+    }
+
+    @RequestMapping(path = "/merge", method = RequestMethod.POST)
+    public String mergeFiles(@RequestParam(name = "files") MultipartFile[] multipartFile) throws IOException {
+        return mergeFileServer.mergeFiles(multipartFile);
     }
 
 }
