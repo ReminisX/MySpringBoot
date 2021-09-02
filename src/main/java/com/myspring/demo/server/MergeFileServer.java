@@ -56,7 +56,7 @@ public class MergeFileServer {
         fileInformationData.setFileParam(multipartFile.getName());
         fileInformationData.setFileName(multipartFile.getOriginalFilename());
         fileInformationData.setFileSize(multipartFile.getSize());
-        fileInformationData.setType(multipartFile.getContentType());
+        fileInformationData.setFileType(multipartFile.getContentType());
 
         String res = JSON.toJSONString(fileInformationData);
         return res;
