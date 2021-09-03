@@ -20,6 +20,4 @@ public class IndexController {
         return "this is a index page";
     }
 
-
-
 }
