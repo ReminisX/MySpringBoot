@@ -1,5 +1,7 @@
 package com.myspring.demo;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.myspring.demo.entity.po.User;
 import com.myspring.demo.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
@@ -10,7 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-@MapperScan("com.baomidou.mybatisplus.samples.quickstart.mapper")
 @MapperScan("com.myspring.demo.mapper")
 class DemoApplicationTests {
 
@@ -20,8 +21,12 @@ class DemoApplicationTests {
     @Test
     public void testSelect() {
         System.out.println(("----- selectAll method test ------"));
+        PageHelper.startPage(0, 1);
         List<User> userList = userMapper.selectList(null);
-        userList.forEach(System.out::println);
+        PageInfo pageInfo = new PageInfo(userList);
+        List<User> res = pageInfo.getList();
+        res.forEach(System.out::println);
+
     }
 
     @Test

@@ -5,7 +5,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  *
+ * @author ZhangXD
  */
 public interface UserService extends IService<User> {
+
+
 
 }
