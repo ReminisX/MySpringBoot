@@ -1,6 +1,6 @@
-package com.myspring.demo.server.impl;
+package com.myspring.demo.service.impl;
 
-import com.myspring.demo.server.MyDataServer;
+import com.myspring.demo.service.MyDataServer;
 import org.springframework.stereotype.Component;
 
 /**

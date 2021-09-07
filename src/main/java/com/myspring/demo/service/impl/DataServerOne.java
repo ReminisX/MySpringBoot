@@ -1,4 +1,4 @@
-package com.myspring.demo.server.impl;
+package com.myspring.demo.service.impl;
 
 /**
  * @Author ZhangXD
@@ -6,7 +6,7 @@ package com.myspring.demo.server.impl;
  * @Description
  */
 
-import com.myspring.demo.server.MyDataServer;
+import com.myspring.demo.service.MyDataServer;
 import org.springframework.stereotype.Component;
 
 @Component

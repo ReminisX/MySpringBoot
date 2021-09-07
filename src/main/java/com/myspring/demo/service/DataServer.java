@@ -1,4 +1,4 @@
-package com.myspring.demo.server;
+package com.myspring.demo.service;
 
 import org.springframework.stereotype.Service;
 
