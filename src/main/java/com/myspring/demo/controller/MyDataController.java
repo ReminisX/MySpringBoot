@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/mydata")
 @ResponseBody
-public class MyDataCOntroller {
+public class MyDataController {
 
     @Autowired
     private DataServer dataServer;

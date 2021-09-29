@@ -6,6 +6,10 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 /**
  * 
@@ -18,11 +22,13 @@ public class User implements Serializable {
      * 
      */
     @TableId
+    @NotEmpty
     private Integer id;
 
     /**
      * 
      */
+    @Length(max = 256)
     private String name;
 
     /**
@@ -33,16 +39,19 @@ public class User implements Serializable {
     /**
      * 
      */
+    @Length(max = 256)
     private String address;
 
     /**
      * 
      */
+    @Email
     private String email;
 
     /**
      * 
      */
+    @Length(max = 128)
     private String phone;
 
     @TableField(exist = false)

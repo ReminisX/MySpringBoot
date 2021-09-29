@@ -17,3 +17,6 @@ pagehelper:
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
+mybatis-plus:
+    configuration:
+        cache-enabled: true
