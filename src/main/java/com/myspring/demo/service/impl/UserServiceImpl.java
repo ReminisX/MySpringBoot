@@ -1,6 +1,7 @@
 package com.myspring.demo.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -25,6 +26,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public String getAllUsers(Integer startNum, Integer pageSize) {
         PageHelper.startPage(startNum, pageSize);
         List<User> userList = userMapper.selectList(null);
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         PageInfo pageInfo = new PageInfo(userList);
         String jsonOutput = JSON.toJSONString(pageInfo.getList());
         return jsonOutput;
